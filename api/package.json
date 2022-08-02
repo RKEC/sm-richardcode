@@ -1,0 +1,24 @@
+{
+  "name": "project-website",
+  "version": "1.0.0",
+  "description": "A website to show off all your cool projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "richardcode",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "helmet": "^5.1.0",
+    "mongoose": "^6.4.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16"
+  },
+  "devDependencies": {
+    "husky": "^4.3.8"
+  }
+}
