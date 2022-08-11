@@ -1,5 +1,6 @@
-import "./sidebar.css"
+import Friend from "../friend/Friend"
 import { RssFeed, FolderOpen, Logout, Info } from "@mui/icons-material"
+import "./sidebar.css"
 
 export default function Sidebar() {
   return (
@@ -26,10 +27,9 @@ export default function Sidebar() {
         <button className="sidebarButton">Show More</button>
         <hr className="sidebarHr"/>
         <ul className="sidebarFriendList">
-          <li className="sidebarFriend">
-            <img src="/assets/person/skull.jpg" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName"> Richard Collins</span>
-          </li>
+            {Users.map((u) => (
+              <Friend key={u.id} user={u}/>
+            ))}
         </ul>
       </div>
     </div>

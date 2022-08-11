@@ -6,10 +6,10 @@
   </defs>
   <g id="richardcode" clip-path="url(#clip-richardcode)">
     <rect width="1956" height="800" fill="rgba(255,255,255,0)"/>
-    <text id="richard" transform="translate(16 553)" fill="#F1F3F4" font-size="370" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">richard</tspan></text>
-    <text id="c" transform="translate(1143 553)" fill="#8359f9" font-size="370" font-family="SegoeUI-BoldItalic, Segoe UI" font-weight="700" font-style="italic"><tspan x="0" y="0">c</tspan></text>
-    <text id="o" transform="translate(1314 553)" fill="#5ff3a0" font-size="370" font-family="SegoeUI-BoldItalic, Segoe UI" font-weight="700" font-style="italic"><tspan x="0" y="0">o</tspan></text>
-    <text id="d" transform="translate(1531 553)" fill="#8359f9" font-size="370" font-family="SegoeUI-BoldItalic, Segoe UI" font-weight="700" font-style="italic"><tspan x="0" y="0">d</tspan></text>
-    <text id="e" transform="translate(1749 553)" fill="#5ff3a0" font-size="370" font-family="SegoeUI-BoldItalic, Segoe UI" font-weight="700" font-style="italic"><tspan x="0" y="0">e</tspan></text>
+    <text id="richard" transform="translate(16 553)" fill="#F1F3F4" font-size="370" font-family="Helvetica, Segoe UI"><tspan x="-30" y="0">richard</tspan></text>
+    <text id="c" transform="translate(1143 553)" fill="#8359f9" font-size="370" font-family="Helvetica" font-weight="700" font-style="italic"><tspan x="-25" y="0">c</tspan></text>
+    <text id="o" transform="translate(1314 553)" fill="#5ff3a0" font-size="370" font-family="Helvetica" font-weight="700" font-style="italic"><tspan x="0" y="0">o</tspan></text>
+    <text id="d" transform="translate(1531 553)" fill="#8359f9" font-size="370" font-family="Helvetica" font-weight="700" font-style="italic"><tspan x="0" y="0">d</tspan></text>
+    <text id="e" transform="translate(1749 553)" fill="#5ff3a0" font-size="370" font-family="Helvetica" font-weight="700" font-style="italic"><tspan x="0" y="">e</tspan></text>
   </g>
 </svg>

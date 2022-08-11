@@ -1,3 +1,14 @@
-.rightbar{
+.rightbar {
     flex: 3;
+}
+
+.rightbarTitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.rightbarFriendList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }

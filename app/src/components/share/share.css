@@ -27,7 +27,7 @@
     border: none;
     width: 80%;
     color: #F1F3F4;
-    background-color: #272727;
+    background-color: var(--primary-colour);
 }
 
 .shareInput:focus {
