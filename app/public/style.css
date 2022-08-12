@@ -4,10 +4,12 @@
     --primary-colour: #32214E;
     --secondary-colour: #1E1B41;
     --accent-colour: #9A77CF;
+    --white: #F1F3F4;
+    --green: #29ad29;
 }
 
 body {
-    color: #F1F3F4;
+    color: var(--white);
     background-color: var(--primary-colour);
 }
 

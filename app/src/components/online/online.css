@@ -20,7 +20,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #29ad29;
+    background-color: var(--green);
     position: absolute;
     top: -2px;
     right: 0;
