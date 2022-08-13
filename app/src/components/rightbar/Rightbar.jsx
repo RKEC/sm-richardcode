@@ -1,13 +1,14 @@
-import Online from "../online/Online"
-import "./rightbar.css"
+import Online from "../online/Online";
+import "./rightbar.css";
 
-export default function Rightbar({ profile }) {
+export default function Rightbar({ user }) {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const HomeRightbar = () => {
     return (
       <>
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
-          {users.map((u) => (
+          {Users.map((u) => (
             <Online key={u.id} user={u} />
           ))}
         </ul>
@@ -30,7 +31,8 @@ export default function Rightbar({ profile }) {
   return (
     <div className="rightbar">
       <div className="rightbarWrapper">
+        { user ? <ProfileRightbar/> : <HomeRightbar/> }
       </div>
     </div>
   );
-};
+}

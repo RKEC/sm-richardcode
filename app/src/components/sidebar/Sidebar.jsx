@@ -3,6 +3,7 @@ import { RssFeed, FolderOpen, Logout, Info } from "@mui/icons-material"
 import "./sidebar.css"
 
 export default function Sidebar() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
