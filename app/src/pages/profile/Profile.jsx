@@ -4,7 +4,7 @@ import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {useParams} from "react-router"
+import { useParams } from "react-router"
 import "./profile.css"
 
 export default function Profile() {
@@ -28,12 +28,12 @@ export default function Profile() {
                     <div className="profileRightTop">
                         <div className="profileCover">
                             <img
-                                src={user.coverPicture || PF + "person/default-cover.jpg"}
+                                src={user.coverPicture ? PF + user.coverPicture : PF + "person/default-cover.jpg"}
                                 alt=""
                                 className="profileCoverImg"
                             />
                             <img
-                                src={user.profilePicture || PF + "person/default-profile-img.png"}
+                                src={user.profilePicture ? PF + user.profilePicture : PF + "person/default-profile-img.png"}
                                 alt=""
                                 className="profileUserImg"
                             />

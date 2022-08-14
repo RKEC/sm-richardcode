@@ -1,4 +1,4 @@
-import {useRef } from 'react';
+import { useRef } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './register.css';
@@ -8,21 +8,21 @@ export default function Register() {
     const email = useRef();
     const password = useRef();
     const confirmPassword = useRef();
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const handleClick = async (e) => {
         e.preventDefault();
         if (confirmPassword.current.value !== password.current.value) {
-            confirmPassword.current.setCustomValidity("Passwords don't match!")
+            confirmPassword.current.setCustomValidity("Passwords don't match!");
         } else {
             const user = {
                 username: username.current.value,
                 email: email.current.value,
                 password: password.current.value,
-            }
+            };
             try {
                 await axios.post("/auth/register", user);
-                history.push("/login");
+                navigate("/login");
             } catch (err) {
                 console.log(err);
             }
@@ -38,7 +38,7 @@ export default function Register() {
                     </span>
                 </div>
                 <div className="loginRight">
-                    <form className="loginBox" onSubmit={handleClick()}>
+                    <form className="loginBox" onSubmit={handleClick}>
                         <input placeholder="Username" required ref={username} className="loginInput" />
                         <input placeholder="Email" required ref={email} type="email" className="loginInput" />
                         <input placeholder="Password" required ref={password} type="password" minLength={6} className="loginInput" />

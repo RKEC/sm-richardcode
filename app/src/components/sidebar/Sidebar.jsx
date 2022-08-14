@@ -1,9 +1,12 @@
 import Friend from "../friend/Friend"
 import { RssFeed, FolderOpen, Logout, Info } from "@mui/icons-material"
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import "./sidebar.css"
 
 export default function Sidebar() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const {user} = useContext(AuthContext);
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
@@ -28,9 +31,7 @@ export default function Sidebar() {
         <button className="sidebarButton">Show More</button>
         <hr className="sidebarHr"/>
         <ul className="sidebarFriendList">
-            {Users.map((u) => (
-              <Friend key={u.id} user={u}/>
-            ))}
+
         </ul>
       </div>
     </div>

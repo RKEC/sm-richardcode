@@ -6,13 +6,13 @@ import "./topbar.css";
 
 export default function Topbar() {
 
-    const {user} = useContext(AuthContext)
+    const {user} = useContext(AuthContext);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     return (
         <div className="topbarContainer">
             <div className="topbarLeft">
                 <Link to="/" style={{textDecoration:"none"}}>
-                <span className="logo"><img src="http://localhost:3000/assets/assets/richardcode.svg" alt="logo" /></span>
+                <span className="logo"><img src="http://localhost:3000/assets/richardcode.svg" alt="logo" /></span>
                 </Link>
             </div>
             <div className="topbarCenter">
