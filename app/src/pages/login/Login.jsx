@@ -16,7 +16,8 @@ export default function Login() {
                 email: email.current.value,
                 password: password.current.value
             },
-            dispatch);
+            dispatch
+        );
     }
     return (
         <div className="login">
@@ -28,7 +29,7 @@ export default function Login() {
                     </span>
                 </div>
                 <div className="loginRight">
-                    <form className="loginBox" onSubmit={handleClickno}>
+                    <form className="loginBox" onSubmit={handleClick}>
                         <input placeholder="Email" type="email" required className="loginInput" ref={email} />
                         <input
                             placeholder="Password"

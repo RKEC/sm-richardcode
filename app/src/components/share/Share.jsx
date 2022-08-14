@@ -1,6 +1,5 @@
 import { PermMedia } from '@mui/icons-material';
-import { useState, useRef } from 'react';
-import { useContext } from "react";
+import { useContext, useState, useRef } from 'react';
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import "./share.css";
@@ -8,6 +7,7 @@ import "./share.css";
 export default function Share() {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const { user } = useContext(AuthContext);
+    const title = useRef();
     const desc = useRef();
     const [file, setFile] = useState(null);
 
@@ -15,14 +15,24 @@ export default function Share() {
         e.preventDefault();
         const newPost = {
             userId: user._id,
+            title: title.current.value,
             desc: desc.current.value
+        };
+        if (file) {
+            const data = new FormData();
+            const fileName = Date.now() + file.name;
+            data.append("name", fileName);
+            data.append("file", file);
+            newPost.img = fileName;
+            console.log(newPost);
+            try {
+                await axios.post("/upload", data);
+            } catch (err) { }
         }
-
         try {
-            await axios.post("/posts", newPost)
-        } catch (err) {
-
-        }
+            await axios.post("/posts", newPost);
+            window.location.reload();
+        } catch (err) { }
     }
     return (
         <div className="share">
@@ -30,15 +40,20 @@ export default function Share() {
                 <div className="shareTop">
                     <img
                         className="shareProfileImg"
-                        src={user.profilePicture ? PF + user.profilePicture : PF + "person/default-profile-img.png"}
+                        src={user.profilePicture ? PF + "person/" + user.profilePicture : PF + "person/default-profile-img.png"}
                         alt=""
                     />
                     <input
                         placeholder="Project Title"
                         className="shareInput"
-                        ref={desc}
+                        ref={title}
                     />
                 </div>
+                <input
+                        placeholder="Project Description"
+                        className="shareInput"
+                        ref={desc}
+                    />
                 <hr className="shareHr" />
                 <form className="shareBottom" onSubmit={submitHandler}>
                     <div className="shareOptions">

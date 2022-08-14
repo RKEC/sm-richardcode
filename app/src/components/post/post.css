@@ -29,6 +29,8 @@
 }
 
 .postUsername {
+    color: var(--white);
+    text-decoration: none;
     font-size: 15px;
     font-weight: 500;
     margin: 0 10px;
@@ -40,6 +42,13 @@
 
 .postCenter {
     margin: 20px 0;
+}
+
+h3.postText{
+    padding: 0 10px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border-bottom: 1.5px var(--accent-colour) solid;
 }
 
 .postImg {

@@ -10,6 +10,7 @@ import "./profile.css"
 export default function Profile() {
     const [user, setUser] = useState({});
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    console.log(PF);
     const username = useParams().username;
 
     useEffect(() => {
@@ -33,7 +34,7 @@ export default function Profile() {
                                 className="profileCoverImg"
                             />
                             <img
-                                src={user.profilePicture ? PF + user.profilePicture : PF + "person/default-profile-img.png"}
+                                src={user.profilePicture ? PF + "person/" + user.profilePicture : PF + "person/default-profile-img.png"}
                                 alt=""
                                 className="profileUserImg"
                             />
@@ -45,7 +46,6 @@ export default function Profile() {
                     </div>
                     <div className="profileRightBottom">
                         <Feed username={username} />
-                        <Rightbar user={user} />
                     </div>
                 </div>
             </div>

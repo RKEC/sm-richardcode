@@ -1,6 +1,6 @@
 .share {
     width: 100%;
-    height: 170px;
+    height: 195px;
     border-radius: 10px;
     -webkit-box-shadow: 0 0 16px 0 rgba(0 0 0 / 68%);
     box-shadow: 0 0 16px 0 rgba(0 0 0 / 68%);
@@ -20,14 +20,17 @@
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 10px;
+    margin-right: -10px;
+    margin-bottom: 10px;
 }
 
 .shareInput {
+    display: block;
     border: none;
     width: 80%;
     color: #F1F3F4;
     background-color: var(--primary-colour);
+    margin-left: 20px;
 }
 
 .shareInput:focus {
@@ -46,6 +49,7 @@
 
 .shareOptions {
     display: flex;
+    align-items: center;
 }
 
 .shareOption { 

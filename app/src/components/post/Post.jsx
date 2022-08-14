@@ -8,7 +8,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function Post({ post }) {
-
     const [like, setLike] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
     const [user, setUser] = useState({});
@@ -30,9 +29,7 @@ export default function Post({ post }) {
     const likeHandler = () => {
         try {
             axios.put("/posts/" + post._id + "/like", { userId: currentUser._id })
-        } catch (err) {
-
-        }
+        } catch (err) { }
         setLike(isLiked ? like - 1 : like + 1)
         setIsLiked(!isLiked)
     }
@@ -45,7 +42,9 @@ export default function Post({ post }) {
                         <Link to={`profile/${user.username}`}>
                             <img
                                 className="postProfileImg"
-                                src={user.profilePicture ? PF + user.profilePicture : PF + "person/default-profile-img.png"}
+                                src={
+                                    user.profilePicture ? PF + "person/" + user.profilePicture : PF + "person/default-profile-img.png"
+                                }
                                 alt=""
                             />
                         </Link>
@@ -57,17 +56,14 @@ export default function Post({ post }) {
                     </div>
                 </div>
                 <div className="postCenter">
-                    <span className="postText">{post.title}</span>
-                    <img src={PF + post.img} alt="" className="postImg" />
+                    <h3 className="postText">{post?.title}</h3>
+                    <span className="postText">{post?.desc}</span>
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
-                        <Favorite className="likeIcon" onClick={likeHandler} />
-                        <ThumbUp className="likeIcon" onClick={likeHandler} />
+                        <Favorite className="likeIcon" htmlColor="#ff2e00" onClick={likeHandler} />
+                        <ThumbUp className="likeIcon" htmlColor="#0093ff" onClick={likeHandler} />
                         <span className="postLikeCounter"> {like} people liked</span>
-                    </div>
-                    <div className="postBottomRight">
-                        <span className="postCommentText">{post.comment} comments</span>
                     </div>
                 </div>
             </div>

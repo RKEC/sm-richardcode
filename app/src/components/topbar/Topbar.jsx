@@ -12,7 +12,7 @@ export default function Topbar() {
         <div className="topbarContainer">
             <div className="topbarLeft">
                 <Link to="/" style={{textDecoration:"none"}}>
-                <span className="logo"><img src="http://localhost:3000/assets/richardcode.svg" alt="logo" /></span>
+                <span className="logo"><img src={PF+ "/richardcode.svg"} alt="logo" /></span>
                 </Link>
             </div>
             <div className="topbarCenter">
@@ -36,8 +36,8 @@ export default function Topbar() {
                         <span className="topbarIconBadge">2</span>
                     </div>
                 </div>
-                <Link to={"/profile/"+ user.username}>
-                <img src={user.profilePicture ? PF+user.profilePicture : PF+"person/default-profile-img.png"} alt="" className="topbarImg" />
+                <Link to={`/profile/${user.username}`}>
+                <img src={user.profilePicture ?  PF+"person/"+user.profilePicture : PF+"person/default-profile-img.png"} alt="" className="topbarImg" />
                 </Link>
             </div>
         </div>
